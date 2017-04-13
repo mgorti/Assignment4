@@ -1,0 +1,66 @@
+package Omk;
+
+public class Omk_Staff {
+
+	public static void main(String[] args) {
+		
+		package Omk;
+
+
+
+		import java.util.concurrent.TimeUnit;
+
+		import org.openqa.selenium.By;
+		import org.openqa.selenium.Keys;
+		import org.openqa.selenium.WebDriver;
+		import org.openqa.selenium.WebElement;
+		import org.openqa.selenium.chrome.ChromeDriver;
+		//import org.openqa.selenium.chrome.ChromeDriver;
+		import org.openqa.selenium.firefox.FirefoxDriver;
+		import org.openqa.selenium.support.ui.ExpectedConditions;
+		import org.openqa.selenium.support.ui.Select;
+		import org.openqa.selenium.support.ui.WebDriverWait;
+
+		public class Kish_staff {
+
+			public static void main(String[] args) {
+				// TODO Auto-generated method stub
+				System.setProperty("webdriver.chrome.driver", "C:\\Chrome selenium driver\\chromedriver.exe");
+				WebDriver driver = new ChromeDriver();
+				
+				//WebDriver driver = new FirefoxDriver();
+				driver.get("http://omk.herokuapp.com/login");
+				driver.findElement(By.id("email")).sendKeys("kishore@staff.com");
+				driver.findElement(By.id("password")).sendKeys("121212");
+				driver.findElement(By.xpath(".//*[@id='app']/div/div/div/div/div[2]/form/div[4]/div/button")).click();
+				WebDriverWait wait = new WebDriverWait(driver, 30);
+				//System.out.println("ani");
+				
+				
+
+				driver.findElement(By.xpath("//a[@href='http://omk.herokuapp.com/staffs']")).click();
+			
+				
+				//WebDriverWait wait = new WebDriverWait(driver, 30);
+				//driver.findElement(By.cssSelector(".panel.panel-default>h2>a']")).click();
+				//driver.findElement(By.xpath("//a[@href='http://omk.herokuapp.com/staffs']")).click();
+				WebDriverWait wait1 = new WebDriverWait(driver, 40);
+				
+				driver.findElement(By.xpath(".//*[@id='app']/h2/a[3]")).click();
+				driver.findElement(By.xpath(".//*[@id='app']/a")).click();
+				Select dropdown = new Select(driver.findElement(By.name("id")));//Dropdown Declaration//
+				dropdown.selectByValue("2");
+				driver.findElement(By.id("mentor_name")).sendKeys("ani");
+				driver.findElement(By.id("student_name")).sendKeys("kishore");
+				driver.findElement(By.id("date")).sendKeys("2017-04-05");
+				driver.findElement(By.id("time")).sendKeys("23:49:23");
+				driver.findElement(By.id("location")).sendKeys("Omaha");
+				driver.findElement(By.xpath("html/body/div[1]/form/div[7]/input")).click();
+				
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,23 @@
+package Omk;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Omk_regstaff {
+
+	public static void main(String[] args) 
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Selenium Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://omk.herokuapp.com");
+		driver.get("http://omk.herokuapp.com/register");
+		driver.findElement(By.id("name")).sendKeys("kishore");
+		driver.findElement(By.id("email")).sendKeys("Mgort@staff.com");
+		driver.findElement(By.id("password")).sendKeys("121212");
+		driver.findElement(By.id("password-confirm")).sendKeys("121212");
+		driver.findElement(By.xpath("//*[@value='staff']")).click();
+		driver.findElement(By.xpath(".//*[@id='app']/div/div/div/div/div[2]/form/div[6]/div/button")).click();
+}
+
+}
